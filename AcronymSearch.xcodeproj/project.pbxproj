@@ -14,6 +14,8 @@
 		FEC4025A284D318900340182 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC40258284D318900340182 /* Main.storyboard */; };
 		FEC4025C284D318C00340182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC4025B284D318C00340182 /* Assets.xcassets */; };
 		FEC4025F284D318C00340182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC4025D284D318C00340182 /* LaunchScreen.storyboard */; };
+		FEC40268284D371100340182 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC40267284D371100340182 /* NetworkService.swift */; };
+		FEC4026B284D3B3000340182 /* Acronym.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4026A284D3B3000340182 /* Acronym.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FEC4025B284D318C00340182 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC4025E284D318C00340182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEC40260284D318C00340182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC40267284D371100340182 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		FEC4026A284D3B3000340182 /* Acronym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acronym.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,6 @@
 				63168A931805C712B4F5259C /* Pods-AcronymSearch.debug.xcconfig */,
 				DA285E5439BF91479EBDCC7B /* Pods-AcronymSearch.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,12 +87,30 @@
 				FEC40252284D318900340182 /* AppDelegate.swift */,
 				FEC40254284D318900340182 /* SceneDelegate.swift */,
 				FEC40256284D318900340182 /* ViewController.swift */,
+				FEC40269284D3AFF00340182 /* Model */,
+				FEC40266284D36F000340182 /* Network */,
 				FEC40258284D318900340182 /* Main.storyboard */,
 				FEC4025B284D318C00340182 /* Assets.xcassets */,
 				FEC4025D284D318C00340182 /* LaunchScreen.storyboard */,
 				FEC40260284D318C00340182 /* Info.plist */,
 			);
 			path = AcronymSearch;
+			sourceTree = "<group>";
+		};
+		FEC40266284D36F000340182 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FEC40267284D371100340182 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FEC40269284D3AFF00340182 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4026A284D3B3000340182 /* Acronym.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEC40257284D318900340182 /* ViewController.swift in Sources */,
+				FEC4026B284D3B3000340182 /* Acronym.swift in Sources */,
 				FEC40253284D318900340182 /* AppDelegate.swift in Sources */,
+				FEC40268284D371100340182 /* NetworkService.swift in Sources */,
 				FEC40255284D318900340182 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
