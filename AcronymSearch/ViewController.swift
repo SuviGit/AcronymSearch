@@ -74,9 +74,9 @@ extension ViewController : UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-        if let text = textField.text{
-            viewmodel.network.urlStr = text as String
-            viewmodel.fetchData()
+        if let abb = textField.text{
+            
+            viewmodel.fetchData(abb: abb)
             
             viewmodel.acronyms.bind {[weak self] _ in
                 DispatchQueue.main.async {

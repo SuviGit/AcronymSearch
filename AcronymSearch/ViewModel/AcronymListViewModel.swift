@@ -15,8 +15,9 @@ class AcronymListViewModel{
     
     
     
-    func fetchData(){
-     
+    func fetchData(abb:String){
+        network.urlStr = abb
+        
         network.getResponse { data in
             
             self.acronyms.value = data
