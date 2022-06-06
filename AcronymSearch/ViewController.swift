@@ -11,24 +11,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-
+    @IBOutlet weak var textfield: UITextField!
+  
     private var viewmodel = AcronymListViewModel()
+
     
-    let lf:String = "abcd"
-    let freq:String = "1"
-    let year:String = "1996"
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        viewmodel.acronyms.bind {[weak self] _ in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
+        textfield.returnKeyType = .done
+        textfield.autocapitalizationType = .words
+        textfield.autocorrectionType = .no
+        textfield.becomeFirstResponder()
         
-        viewmodel.fetchData()
+  
+       
     }
 
 
@@ -37,16 +36,27 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewmodel.acronyms.value!)
-        return viewmodel.acronyms.value?.count ?? 0;
+        let data:[Acronym] = viewmodel.acronyms.value!
+        
+        if data.count != 0{
+            
+            return data[0].longForms.count
+        }
+        return 1
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "acronymcell", for: indexPath) as? AcronymCell
-        cell?.longformLbl.text = lf
-        cell?.freqLbl.text = freq
-        cell?.yearLbl.text = year
+       
+        let data:[Acronym] = viewmodel.acronyms.value!
+        
+        if(data.count > 0){
+            cell?.longformLbl.text = data[0].longForms[indexPath.row].lf
+            cell?.freqLbl.text = String(data[0].longForms[indexPath.row].frequency!)
+            cell?.yearLbl.text = String(data[0].longForms[indexPath.row].since!)
+        }
+
         
         
         return cell!
@@ -54,6 +64,28 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
+    }
+    
+}
+
+
+extension ViewController : UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        if let text = textField.text{
+            viewmodel.network.urlStr = text as String
+            viewmodel.fetchData()
+            
+            viewmodel.acronyms.bind {[weak self] _ in
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
+        
+        return true
     }
     
 }

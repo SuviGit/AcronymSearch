@@ -74,6 +74,9 @@
                                 <rect key="frame" x="20" y="80" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5Ct-Zb-OOI"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -90,6 +93,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ae1-Pi-EsA" id="Feu-UC-Cv0"/>
+                        <outlet property="textfield" destination="Jz3-34-pTy" id="gbb-6h-M8r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
