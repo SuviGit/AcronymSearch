@@ -17,18 +17,21 @@ class NetworkService{
         return urlString
     }
     
-    func getResponse(){
+    func getResponse(completion completionhandler:@escaping([Acronym]) -> Void){
         
         let url = self.sendRequest(abbreviation: "ABB")
     
         
         AF.request(url).responseDecodable(of:[Acronym].self) { data in
             guard let response = data.value else{return}
-            print(response[0])
+           // print(response.count)
             
-            guard let responseData = response[0].longForm[0].lf else{return}
+            completionhandler(response)
             
-            print(responseData)
+            
+//            guard let responseData = response[0].longForm[0].lf else{return}
+//            
+//            print(responseData)
         }
         
     }

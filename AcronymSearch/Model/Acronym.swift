@@ -10,12 +10,12 @@ import Foundation
 struct Acronym:Decodable{
     
     var shortForm:String?
-    var longForm:[LongForms]
+    var longForms:[LongForms]
 
     
     enum CodingKeys:String, CodingKey{
         case shortForm = "sf"
-        case longForm = "lfs"
+        case longForms = "lfs"
 
     }
 }

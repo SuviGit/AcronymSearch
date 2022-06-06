@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ECBCF91B5B19D2C3B97E1075 /* Pods_AcronymSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A86C9F7D4563E782EE1EBE7 /* Pods_AcronymSearch.framework */; };
+		FE298CEC284DB5280004AC71 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298CEB284DB5280004AC71 /* Observable.swift */; };
+		FE298CEE284DB8F60004AC71 /* AcronymListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298CED284DB8F60004AC71 /* AcronymListViewModel.swift */; };
 		FEC40253284D318900340182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC40252284D318900340182 /* AppDelegate.swift */; };
 		FEC40255284D318900340182 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC40254284D318900340182 /* SceneDelegate.swift */; };
 		FEC40257284D318900340182 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC40256284D318900340182 /* ViewController.swift */; };
@@ -16,12 +18,15 @@
 		FEC4025F284D318C00340182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC4025D284D318C00340182 /* LaunchScreen.storyboard */; };
 		FEC40268284D371100340182 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC40267284D371100340182 /* NetworkService.swift */; };
 		FEC4026B284D3B3000340182 /* Acronym.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4026A284D3B3000340182 /* Acronym.swift */; };
+		FEC40272284D45B800340182 /* AcronymCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC40270284D45B800340182 /* AcronymCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A86C9F7D4563E782EE1EBE7 /* Pods_AcronymSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcronymSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63168A931805C712B4F5259C /* Pods-AcronymSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymSearch.debug.xcconfig"; path = "Target Support Files/Pods-AcronymSearch/Pods-AcronymSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		DA285E5439BF91479EBDCC7B /* Pods-AcronymSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymSearch.release.xcconfig"; path = "Target Support Files/Pods-AcronymSearch/Pods-AcronymSearch.release.xcconfig"; sourceTree = "<group>"; };
+		FE298CEB284DB5280004AC71 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FE298CED284DB8F60004AC71 /* AcronymListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymListViewModel.swift; sourceTree = "<group>"; };
 		FEC4024F284D318900340182 /* AcronymSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcronymSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC40252284D318900340182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC40254284D318900340182 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 		FEC40260284D318C00340182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC40267284D371100340182 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FEC4026A284D3B3000340182 /* Acronym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acronym.swift; sourceTree = "<group>"; };
+		FEC40270284D45B800340182 /* AcronymCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +93,10 @@
 				FEC40252284D318900340182 /* AppDelegate.swift */,
 				FEC40254284D318900340182 /* SceneDelegate.swift */,
 				FEC40256284D318900340182 /* ViewController.swift */,
+				FE298CEB284DB5280004AC71 /* Observable.swift */,
+				FEC4026D284D3EAC00340182 /* View */,
 				FEC40269284D3AFF00340182 /* Model */,
+				FEC4026C284D3E7900340182 /* ViewModel */,
 				FEC40266284D36F000340182 /* Network */,
 				FEC40258284D318900340182 /* Main.storyboard */,
 				FEC4025B284D318C00340182 /* Assets.xcassets */,
@@ -111,6 +120,22 @@
 				FEC4026A284D3B3000340182 /* Acronym.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FEC4026C284D3E7900340182 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FE298CED284DB8F60004AC71 /* AcronymListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEC4026D284D3EAC00340182 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEC40270284D45B800340182 /* AcronymCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +256,10 @@
 				FEC40257284D318900340182 /* ViewController.swift in Sources */,
 				FEC4026B284D3B3000340182 /* Acronym.swift in Sources */,
 				FEC40253284D318900340182 /* AppDelegate.swift in Sources */,
+				FE298CEC284DB5280004AC71 /* Observable.swift in Sources */,
+				FEC40272284D45B800340182 /* AcronymCell.swift in Sources */,
 				FEC40268284D371100340182 /* NetworkService.swift in Sources */,
+				FE298CEE284DB8F60004AC71 /* AcronymListViewModel.swift in Sources */,
 				FEC40255284D318900340182 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
