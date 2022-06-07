@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AcronymViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var textfield: UITextField!
   
-    private var viewmodel = AcronymListViewModel()
+    private var viewmodel = AcronymViewModel()
 
     
      
@@ -27,22 +27,26 @@ class ViewController: UIViewController {
         textfield.becomeFirstResponder()
         
   
+        viewmodel.acronyms.bind {[weak self] _ in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
        
     }
 
 
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate{
+extension AcronymViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let data:[Acronym] = viewmodel.acronyms.value!
         
         if data.count != 0{
-            
             return data[0].longForms.count
         }
-        return 1
+        return 0
     }
     
     
@@ -56,8 +60,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
             cell?.freqLbl.text = String(data[0].longForms[indexPath.row].frequency!)
             cell?.yearLbl.text = String(data[0].longForms[indexPath.row].since!)
         }
-
-        
         
         return cell!
     }
@@ -69,20 +71,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
 }
 
 
-extension ViewController : UITextFieldDelegate{
+extension AcronymViewController : UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-        if let abb = textField.text{
-            
+        if let abb = textField.text{            
             viewmodel.fetchData(abb: abb)
-            
-            viewmodel.acronyms.bind {[weak self] _ in
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            }
         }
         
         return true

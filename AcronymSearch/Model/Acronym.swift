@@ -11,7 +11,6 @@ struct Acronym:Decodable{
     
     var shortForm:String?
     var longForms:[LongForms]
-
     
     enum CodingKeys:String, CodingKey{
         case shortForm = "sf"
@@ -25,8 +24,7 @@ struct LongForms: Decodable{
     var lf:String?
     var frequency:Int?
     var since:Int?
-    
-    
+        
     enum CodingKeys:String, CodingKey{
         case lf = "lf"
         case frequency = "freq"

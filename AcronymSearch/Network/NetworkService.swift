@@ -12,32 +12,12 @@ class NetworkService{
     
     fileprivate var baseUrl:String = "http://www.nactem.ac.uk/software/acromine/dictionary.py?sf="
     
-    var urlStr :String{
-        didSet{
-            self.urlStr = self.baseUrl.appending(self.urlStr)
-        }
-    }
-
-    init(_ url:String){
-        self.urlStr = url
-    }
-    
-    
-    
-    func sendRequest(abbreviation abb:String) -> String{
-        let urlString = self.baseUrl + abb
-        return urlString
-    }
-    
-    
-    func getResponse(completion completionhandler:@escaping([Acronym]) -> Void){
+    func getResponse(abb abbreviation:String, completion completionhandler:@escaping([Acronym]) -> Void){
+        let endpoint = self.baseUrl.appending(abbreviation)
         
-        AF.request(self.urlStr).responseDecodable(of:[Acronym].self) { data in
+        AF.request(endpoint).responseDecodable(of:[Acronym].self) { data in
             guard let response = data.value else{return}
-            
             completionhandler(response)
- 
         }
-        
     }
 }

@@ -7,22 +7,14 @@
 
 import Foundation
 
-class AcronymListViewModel{
+class AcronymViewModel{
     
     var acronyms:Observable<[Acronym]> = Observable([])
-    
-    let network = NetworkService("")
-    
-    
+    let network = NetworkService()
     
     func fetchData(abb:String){
-        network.urlStr = abb
-        
-        network.getResponse { data in
-            
+        network.getResponse(abb: abb) { data in
             self.acronyms.value = data
-
-        }
-    }
-   
+        }   
+    }   
 }
