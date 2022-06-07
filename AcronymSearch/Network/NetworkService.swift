@@ -16,8 +16,14 @@ class NetworkService{
         let endpoint = self.baseUrl.appending(abbreviation)
         
         AF.request(endpoint).responseDecodable(of:[Acronym].self) { data in
-            guard let response = data.value else{return}
-            completionhandler(response)
+            
+            switch data.result{
+            case .success(_):
+                guard let response = data.value else{return}
+                completionhandler(response)
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
     }
 }
