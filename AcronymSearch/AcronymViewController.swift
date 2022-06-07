@@ -56,9 +56,9 @@ extension AcronymViewController: UITableViewDataSource, UITableViewDelegate{
         let data:[Acronym] = viewmodel.acronyms.value!
         
         if(data.count > 0){
-            cell?.longformLbl.text = data[0].longForms[indexPath.row].lf
-            cell?.freqLbl.text = String(data[0].longForms[indexPath.row].frequency!)
-            cell?.yearLbl.text = String(data[0].longForms[indexPath.row].since!)
+            cell?.longformLbl.text = data[0].longForms[indexPath.row].lf ?? ""
+            cell?.freqLbl.text = String(data[0].longForms[indexPath.row].frequency ?? 0)
+            cell?.yearLbl.text = String(data[0].longForms[indexPath.row].since ?? 0)
         }
         
         return cell!
