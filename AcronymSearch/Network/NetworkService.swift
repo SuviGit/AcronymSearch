@@ -10,7 +10,7 @@ import Alamofire
 
 class NetworkService{
     
-    fileprivate var baseUrl:String = "http://www.nactem.ac.uk/software/acromine/dictionary.py?sf="
+    fileprivate var baseUrl:String = ConfigValues.get().acronym_endpoint
     
     func getResponse(abb abbreviation:String, completion completionhandler:@escaping([Acronym]) -> Void){
         let endpoint = self.baseUrl.appending(abbreviation)

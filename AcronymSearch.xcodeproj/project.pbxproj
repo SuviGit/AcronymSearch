@@ -19,6 +19,8 @@
 		FEC40268284D371100340182 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC40267284D371100340182 /* NetworkService.swift */; };
 		FEC4026B284D3B3000340182 /* Acronym.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4026A284D3B3000340182 /* Acronym.swift */; };
 		FEC40272284D45B800340182 /* AcronymCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC40270284D45B800340182 /* AcronymCell.swift */; };
+		FEF53C1B284F01C8001840BC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF53C1A284F01C8001840BC /* Config.plist */; };
+		FEF53C1D284F0647001840BC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF53C1C284F0647001840BC /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		FEC40267284D371100340182 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FEC4026A284D3B3000340182 /* Acronym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acronym.swift; sourceTree = "<group>"; };
 		FEC40270284D45B800340182 /* AcronymCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymCell.swift; sourceTree = "<group>"; };
+		FEF53C1A284F01C8001840BC /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		FEF53C1C284F0647001840BC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				FEC4025B284D318C00340182 /* Assets.xcassets */,
 				FEC4025D284D318C00340182 /* LaunchScreen.storyboard */,
 				FEC40260284D318C00340182 /* Info.plist */,
+				FEF53C1A284F01C8001840BC /* Config.plist */,
+				FEF53C1C284F0647001840BC /* Config.swift */,
 			);
 			path = AcronymSearch;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF53C1B284F01C8001840BC /* Config.plist in Resources */,
 				FEC4025F284D318C00340182 /* LaunchScreen.storyboard in Resources */,
 				FEC4025C284D318C00340182 /* Assets.xcassets in Resources */,
 				FEC4025A284D318900340182 /* Main.storyboard in Resources */,
@@ -255,6 +262,7 @@
 			files = (
 				FEC40257284D318900340182 /* AcronymViewController.swift in Sources */,
 				FEC4026B284D3B3000340182 /* Acronym.swift in Sources */,
+				FEF53C1D284F0647001840BC /* Config.swift in Sources */,
 				FEC40253284D318900340182 /* AppDelegate.swift in Sources */,
 				FE298CEC284DB5280004AC71 /* Observable.swift in Sources */,
 				FEC40272284D45B800340182 /* AcronymCell.swift in Sources */,
